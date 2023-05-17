@@ -216,7 +216,13 @@
                 ><img src="images/pic02.jpg" alt=""
               /></a>
               <h3><a href="#">Data Cleaning</a></h3>
-              <p>The timestamps and other relevant dates were converted to Asia/Manila time. New fields: <i>is_image, is_video, is_reply and is_url</i> were created from columns denoting the presence of each. These values were then congregated into <i>'Tweet Type'</i> which contains a comma delimited list of ['Image', 'Video', 'Reply', 'URL'].</p>
+              <p>The timestamps and other relevant dates were converted to Asia/Manila time. New fields: <i>is_image, is_video, is_reply and is_url</i> were created from columns denoting the presence of each. These values were then congregated into <i>'Tweet Type'</i> which contains a comma delimited list of ['Image', 'Video', 'Reply', 'URL'].
+                <br><br>
+                Some columns were dropped, namely: "Link Redirect", "Reviewer", "Review", 
+                "Remarks", "Rating", "Reasoning",
+                "Tweet Translated", "Screenshot", "Views"; 
+                because they were either extraneous or null columns. 
+              </p>
             </article>
           </div>
           <div class="col-6 col-6-medium col-12-small">
@@ -257,7 +263,7 @@
     <article id="viz" class="wrapper style3">
       <div class="container">
         <header>
-          <h2>Data Visualization.</h2>
+          <h2>Data Visualization</h2>
           <p>
             First, the data was distributed non-uniformly so we resampled and aggregated each month so that the time series plots would turn out uniform. The following plots were plotted using seaborn, pandas-profiling, matplotlib, and pandas.
           </p>
@@ -328,16 +334,31 @@
         <div class="row">
           <div class="col-12 col-12-medium col-12-small">
             <article class="box style2">
-              <a href="#" class="image featured">
-                
-              </a>
+              <a href="wf.html" class="image featured">
               <iframe src="wf.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
-              <h3><a href="#">Which personalities/institutions were mentioned in the dataset?</a></h3>
+              </a>
+              <h3><a href="wf.html">Which personalities/institutions were mentioned in the dataset?</a></h3>
               <h4>Research Question 1A </h4>
               <p>Marcos Sr.'s immediate relatives: Imelda Marcos, his wife, and Marcos Jr., his son, topped the mentions. Imelda was shown as the advocate for the release of the wealth, while Marcos Jr. was portrayed as the one who would be able to claim the alleged wealth for the Filipino people - of course, only upon election. </p>
               <p>The 'foundation' varies according to context: for some, it is where the Marcos wealth was stored while for others, it would supposedly be the institution used to distribute the wealth. The 'government', 'bank' and 'legislature' mentions were part of claims to legitimize the origin of the wealth and its due release to the public.</p>
               <p>The succeeding mentions until 'politicians' save for 'duterte', 'switzerland' constitute those who stand in opposition to the supposed release of the Marcos fund to the PH Government while the last set of mentions contain personalities used to further craft the Marcos wealth origin story.</p>
               <p><b>Finding:</b> It seems that the Marcos wealth story is perpetrated to associate the remaining Marcos kin to the promise of progress - all the while painting a story through the linked institutions and antagonizing those who stand in opposition to the Marcoses.</p>
+            </article>
+          </div>
+          <div class="col-12 col-12-medium col-12-small">
+            <article class="box style2">
+              <a href="rq1a0.html" class="image featured">
+              <iframe src="rq1a0.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
+              </a>
+              <a href="rq1a1.html" class="image featured">
+                <iframe src="rq1a1.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
+                </a>
+              <a href="rq1a2.html" class="image featured">
+                <iframe src="rq1a2.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
+                </a>
+              <h3><a href="">Is the number of mentioned personalities/institutions correlated with engagement metrics?</a></h3>
+              <h4>Research Question 1A </h4>
+              <p><b>Finding:</b> A linear trendline was plotted to show the trend in engagement metrics. From observation, there may be no correlation between the number of mentioned personalities/institutions and engagements. However, this may be due to a limitation in sample size or vocabulary.</p>
             </article>
           </div>
           <div class="col-4 col-4-medium col-12-small">
