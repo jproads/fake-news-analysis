@@ -217,7 +217,13 @@
                 ><img src="images/pic02.jpg" alt=""
               /></a>
               <h3><a href="#">Data Cleaning</a></h3>
-              <p>The timestamps and other relevant dates were converted to Asia/Manila time. New fields: <i>is_image, is_video, is_reply and is_url</i> were created from columns denoting the presence of each. These values were then congregated into <i>'Tweet Type'</i> which contains a comma delimited list of ['Image', 'Video', 'Reply', 'URL'].</p>
+              <p>The timestamps and other relevant dates were converted to Asia/Manila time. New fields: <i>is_image, is_video, is_reply and is_url</i> were created from columns denoting the presence of each. These values were then congregated into <i>'Tweet Type'</i> which contains a comma delimited list of ['Image', 'Video', 'Reply', 'URL'].
+                <br><br>
+                Some columns were dropped, namely: "Link Redirect", "Reviewer", "Review", 
+                "Remarks", "Rating", "Reasoning",
+                "Tweet Translated", "Screenshot", "Views"; 
+                because they were either extraneous or null columns. 
+              </p>
             </article>
           </div>
           <div class="col-6 col-6-medium col-12-small">
@@ -261,7 +267,7 @@
     <article id="viz" class="wrapper style3">
       <div class="container">
         <header>
-          <h2>Data Visualization.</h2>
+          <h2>Data Visualization</h2>
           <p>
             Proin odio consequat sapien vestibulum consequat lorem dolore
             feugiat.
