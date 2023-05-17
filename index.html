@@ -223,6 +223,12 @@
                 "Tweet Translated", "Screenshot", "Views"; 
                 because they were either extraneous or null columns. 
               </p>
+              <p>All fields with scraped/entered values were observed for null values using the <i>ydata-profiling</i> package. This allowed us to observe the composition of each feature. From there, we filled null <i>Location</i> and <i>Account bio</i> with empty strings, and engagement metrics (<i>Likes, Retweets, Replies and Quote Retweets</i>) with 0.</p>
+              <p>In compiling numerical data, we chose to keep outliers as they may be telling of a non-linear trend in the dataset or indicative of a text/thematic feature that has yet to be determined. In keeping the outlier values (especially for engagement), we took careful note of <b>not normalizing, scaling or standardizing</b> data features as this would
+              diminish values possibly belonging to the interquartile range by dividing over the outlier value/s. Because engagement metrics in particular were left-skewed, we chose to leave them unscaled.</p>
+              <p>For categorical values, the Content type column was one-hot encoded as it is a binary variable. This made it easier to produce time-series charts for this trend. For the Tweet type column, multiple subcolumns (is_reply, is_text, is_link, is_media) were used to encode it
+               as tweets can be combinations of any of these three fields (e.g. tweets containing images and text, or links in reply to the previous tweet, etc.).
+              </p>
             </article>
           </div>
           <div class="col-6 col-6-medium col-12-small">
