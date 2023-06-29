@@ -6,7 +6,7 @@
 -->
 <html>
   <head>
-    <title>PH Twitter Fake News Analysis</title>
+    <title>Seasons and Clusters of Marcos Sr.'s Last Will Disinformation Tweets</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -386,7 +386,7 @@
                 </a>
               <h3><a>How does word length affect engagement?</a></h3>
               <h4>Research Question 1B </h4>
-              <p><b>Finding:</b><i>WIP</i></p>
+              <p><b>Finding:</b>The length of words do not vary as much especially across classes to merit further investigation on its effect on tweet engagement.</p>
             </article>
             </div>
           <div class="col-12 col-12-medium col-12-small">
@@ -447,19 +447,18 @@
               </a>
               <h3><a>What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of general sentiment?</a></h3>
               <h4>Research Question 2B </h4>
-              <p><b>Finding:</b><br>
-                The tweets can be categorized by tone:
-                <ul>
+              <p><b>Finding:</b> Using nltk's <b>SentimentIntensityAnalyzer</b> and obtaining the sentiment classification with the highest weight as the tweets sentiment, this finding was produced.
+                <ul style="list-style-position: inside;">The tweets can be categorized by tone:
                   <li>Emotional tweets paint Marcos Jr in a positive light rather than express negative attacks against detractors.</li>
                   <li>The Rational category is more negative - defensive against non-supporters.</li>
                 </ul>
-                Tweets were on average more persuasive (Rational, Emotional+) than aggressive.
+                <b>Tweets were on average more persuasive (Rational, Emotional+) than aggressive.</b>
                 <br>
-                This is concluded from the results of two-way analysis of variance (ANOVA) on these features. The Shapiro-Wilk score (0.5323) of the two groups indicate that they are normally-distributed. Thus, the ANOVA will produce conclusive results.
+                This is concluded from the results of <b>two-way analysis of variance (ANOVA)</b> on these features. The <b>Shapiro-Wilk score (0.5323)</b> of the two groups indicate that they are normally-distributed. Thus, the ANOVA will produce conclusive results.
                 <br>
-                The two-way ANOVA across tweet sentiment and content type present that there is a significant difference between the groups at the 98% confidence interval (p-score: 0.01273). 
+                The two-way ANOVA across tweet sentiment and content type present that there is a <b>significant difference</b> between the groups at the <b>98% confidence</b> interval with a p-score of <b>0.01273</b>. 
                 <br>
-                These indicate that the Emotional category is in fact less negative while the Rational category is more neutral in terms of their tones.
+                These indicate that the Emotional category is in fact less negative while the Rational category is more neutral in terms of their tone and language.
               </p>
             </article>
           </div>
@@ -502,7 +501,7 @@
         <header>
           <h2>Data Modelling</h2>
           <p>
-            lorem ipsum dolor
+            Here are the machine learning methods we used:
           </p>
         </header>
         <div class="col-12 col-12-medium col-12-small">
@@ -543,9 +542,45 @@
             </p>
           </article>
         </div>
+        <div class="col-12 col-12-medium col-12-small">
+          <article class="box style2">
+            <a href="lda.html" class="image featured">
+              <iframe src="lda.html" height="600" width="100%" scrolling="yes" frameborder="0"></iframe>
+            </a>
+            <h3><a>Topic Clustering</a></h3>
+            <p>To perform topic clustering, <b>latent dirichlet allocation (LDA)</b> was performed on our dataset. This allows us to determine clusters of tweets which share text features. Initially, t-SNE was used in conjunction with LDA, however, better and more interpretable results were obtained using purely LDA.<br><br>
+              
+              <b>Latent dirichlet allocation</b> was performed using the <b>gensim.models</b> module through the <b>LdaModel</b> data structure. The TF-IDF-applied dataset was input as a sparse matrix with tokenized words and the number of topics.
+              To find the optimal number of topics, the coherence metric of the LDA was obtained for the range of n topics from 1 to 20. The <b>CoherenceModel</b> data structure was used to obtain this measure.<br><br>
+
+              The local peak at <b>n=7</b> was shown to be the local maximum, with the range of topics above 10 being ignored as they are not interpretable. The coherence score of <b>0.622</b> was obtained, denoting fairly good clustering (with the maximum score being 1).
+             </p>
+              <a class="image featured" style="align-items: center;"><img src="images/Coherence.png" alt="" style="width:90%;display:block;margin-left:auto;margin-right:auto;"/></a>
+            <p>
+              <ul>From the top salient and relevant terms, the following topics were determined qualitatively:
+                <li>Cluster 1: the opposition stops wealth, bad for the Filipino people</li>
+                <li>Cluster 2: the Marcos wealth will benefit the Filipino people</li>
+                <li>Cluster 3: vote BBM to return wealth</li>
+                <li>Cluster 4: wealth source to congress then to PH</li>
+                <li>Cluster 5: promise of fulfillment, Imelda helping</li>
+                <li>Cluster 6: the opposition takes advantage of wealth</li>
+                <li>Cluster 7: trust FEM & BBM for eventual aid</li>
+              </ul>
+            </p>
+            The result of LDA modeling was displayed using <b>pyLDAvis</b>. In the diagram above, each node is scaled according to the number of tweets contained within the topic. The clusters are spaced according to their keyword similarity.
+            <br>
+            From this, it is noticeable that there are 3 major clusters: Cluster 1, Cluster 2 and Clusters 3-7. The first cluster uses emotional language to portray the opposition adjacent to the Marcos wealth issue as those preventing its release to the Filipino people. The second cluster illustrates the supposed benefits that the Marcos wealth
+            will provide once it is released. This goes over the foundation that would allegedly be established to fund humanitarian projects for the Philippines upon its disbursement. The last group of clusters talk about opinions adjacent to the Marcos wealth. Rather than appeal to tone and emotion, they simply make suggestions regarding the causation
+            of a Marcos Jr. win with the wealth's release, the lineage of wealth emanating from the Congress, the notion that Imelda is an advocate for development in line with the release of Marcos wealth, the ways in which the opposition will take the wealth for their own and the eventual call to trust Marcos Jr.
+            <br>
+            These themes directly benefit the public's opinion on Ferdinand "Bongbong" Marcos Jr. and Imelda Marcos as apparent in the number of times they are mentioned with the said money. An air of legitimacy is granted to fake tweets as they link their suppositions to institutions such as banks and the government itself. 
+            <br>
+            Through these clusters, the trend in the topics of tweets become more evident, allowing for the promulgation of fact-checks by theme as opposed to by tweet. Articles addressing widespread topics as seen in the cluster map can be amplified according to the size of the network the tweets are spreading into.
+          </article>
+        </div>
         <footer>
-          <p>Want to learn more? Take a look at our source codes.</p>
-          <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Github Repo</a>
+          <p>Want to learn more? Take a look at our source code.</p>
+          <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Check out our Github Repo</a>
         </footer>
       </div>
     </article>
