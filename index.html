@@ -13,6 +13,7 @@
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="images/logo-only.png">
   </head>
 
   <body class="is-preload">
@@ -251,7 +252,7 @@
               <a class="image featured"
                 ><img src="images/pic03.jpg" alt=""
               /></a>
-              <h3><a >NLP</a></h3>
+              <h3><a >Natural Language Processing</a></h3>
               <p>The processed tweet content is fed through <b>CountVectorizer</b> and <b>TfidfVectorizer</b> which count each word associated with the tweet per row and perform TF-IDF for more interpretable results. Only the 1-gram is used as tweets do not require as much sequential context. However, 2-3 grams may be further explored.</p>
               <p>The TF-IDF processed table was taken as input for <b>Principal Component Analysis</b>. This proved to be inconclusive, however, due to the small sample size. This could, however, be used for developing a machine learning model using these features. It was determined that <b>83 components</b> can be derived from the 648 words that were part of the dataset to explain its variance.</p>
             </article>
@@ -504,6 +505,7 @@
             Here are the machine learning methods we used:
           </p>
         </header>
+        <div class="row">
         <div class="col-12 col-12-medium col-12-small">
           <article class="box style2">
             <a class="image featured"><img src="images/ED_own_dataset.png" alt=""/></a>
@@ -545,7 +547,7 @@
         <div class="col-12 col-12-medium col-12-small">
           <article class="box style2">
             <a href="lda.html" class="image featured">
-              <iframe src="lda.html" height="600" width="100%" scrolling="yes" frameborder="0"></iframe>
+              <iframe src="lda.html" height="800" width="100%" scrolling="yes" frameborder="0"></iframe>
             </a>
             <h3><a>Topic Clustering</a></h3>
             <p>To perform topic clustering, <b>latent dirichlet allocation (LDA)</b> was performed on our dataset. This allows us to determine clusters of tweets which share text features. Initially, t-SNE was used in conjunction with LDA, however, better and more interpretable results were obtained using purely LDA.<br><br>
@@ -557,14 +559,14 @@
              </p>
               <a class="image featured" style="align-items: center;"><img src="images/Coherence.png" alt="" style="width:90%;display:block;margin-left:auto;margin-right:auto;"/></a>
             <p>
-              <ul>From the top salient and relevant terms, the following topics were determined qualitatively:
-                <li>Cluster 1: the opposition stops wealth, bad for the Filipino people</li>
-                <li>Cluster 2: the Marcos wealth will benefit the Filipino people</li>
-                <li>Cluster 3: vote BBM to return wealth</li>
-                <li>Cluster 4: wealth source to congress then to PH</li>
-                <li>Cluster 5: promise of fulfillment, Imelda helping</li>
-                <li>Cluster 6: the opposition takes advantage of wealth</li>
-                <li>Cluster 7: trust FEM & BBM for eventual aid</li>
+              <ul style="list-style-position: inside;">From the top salient and relevant terms, the following topics were determined qualitatively:
+                <li><b>Cluster 1:</b> the opposition stops wealth, bad for the Filipino people</li>
+                <li><b>Cluster 2:</b> the Marcos wealth will benefit the Filipino people</li>
+                <li><b>Cluster 3:</b> vote BBM to return wealth</li>
+                <li><b>Cluster 4:</b> wealth source to congress then to PH</li>
+                <li><b>Cluster 5:</b> promise of fulfillment, Imelda helping</li>
+                <li><b>Cluster 6:</b> the opposition takes advantage of wealth</li>
+                <li><b>Cluster 7:</b> trust FEM & BBM for eventual aid</li>
               </ul>
             </p>
             The result of LDA modeling was displayed using <b>pyLDAvis</b>. In the diagram above, each node is scaled according to the number of tweets contained within the topic. The clusters are spaced according to their keyword similarity.
@@ -583,14 +585,14 @@
           <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Check out our Github Repo</a>
         </footer>
       </div>
+    </div>
     </article>
     
     <!-- Conclusion -->
     <article id="conclusion" class="wrapper style3">
       <div class="container">
         <header>
-          <h2>Conclusions</h2>
-
+          <h2>Conclusion</h2>
         </header>
         <div class="row">
           <div class="col-12 col-12-medium col-12-small">
@@ -628,7 +630,7 @@
         <img src="images/Kyle.png" alt="Kyle">
         <div class="info">
           <h2>Kyle Gabriel Reynoso</h2>
-          <p>INSERT BIO</p>
+          <p>Kyle is a senior CS undergraduate with a background in software development, data science and machine learning. He has interned at the machine learning and analytics divisions of software companies and worked on independent research projects in the fields of self-supervised AI and geospatial machine learning. He is currently looking for high-impact roles in these fields to apply his expertise and contribute to innovative solutions at-scale.</p>
           <p>Email: kmreynoso@up.edu.ph</p>
         </div>
       </div>
