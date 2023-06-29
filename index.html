@@ -26,6 +26,7 @@
         <li><a href="#viz">Visualization</a></li>
         <li><a href="#results">Results</a></li>
         <li><a href="#models">Models</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
         <li><a href="#team">Team</a></li>
       </ul>
     </nav>
@@ -35,11 +36,11 @@
       <div class="container">
         <div class="row">
           <div class="col-4 col-5-large col-12-medium">
-            <span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
+            <img src="images/logo-w-text.png" alt="" />
           </div>
           <div class="col-8 col-7-large col-12-medium">
             <header>
-              <h1>Hi. We are <strong>GROUP NAME</strong>.</h1>
+              <h1>Hi. We are <strong>Kepler Analytics.</strong>.</h1>
             </header>
             <p>
               And this is our project,
@@ -120,7 +121,7 @@
         <div class="row aln-center">
 			<div class="col-5">
 				<section class="box style1" style="height: 100%;">
-					<h3><a href="#">Research Question</a></h3>
+					<h3><a>Research Question</a></h3>
 					<p>Which factors that affect the spread of misinformation about Marcos's wealth and last will exhibit in terms of:</p>
 					<ol>
 						<li>linked personalities/institutions,</li>
@@ -131,7 +132,7 @@
 			</div>
 			<div class="col-7 col-7-medium col-12-small">
 				<article class="box style1">
-					<h3><a href="#">Hypotheses</a></h3>
+					<h3><a>Hypotheses</a></h3>
 					<ol>
 						<li>The tweets which mention financial institutions such as the World Bank, and political personalities such as other Marcos relatives to support misinformation regarding Marcos's last will received more engagements than other tweets.</li>
 						<li>The tweets which use shorter words and fewer characters to talk about Marcos's alleged last will received more engagement than long-form tweets.</li>
@@ -141,13 +142,13 @@
 			</div>
 			<div class="col-5 col-5-medium col-12-small">
 				<article class="box style1" style="height: 100%;">
-					<h3><a href="#">Action Plan</a></h3>
+					<h3><a>Action Plan</a></h3>
 					<p>Analyze the content and composition of tweets about the alleged last will of Marcos to determine drivers of tweet engagement.</p>
 				</article>
 			</div>
 			<div class="col-7 col-7-medium col-12-small">
 				<article class="box style1">
-					<h3><a href="#"> Null Hypotheses</a></h3>
+					<h3><a> Null Hypotheses</a></h3>
 					<p>There is no significant difference between the engagement of...</p>
 					<ol>
 						<li>tweets that mention financial institutions and other political personalities and those that do not.</li>
@@ -164,7 +165,7 @@
 		<div class="row aln-center">
 			<div class="col-5">
 				<section class="box style1" style="height: 100%;">
-					<h3><a href="#">Research Question</a></h3>
+					<h3><a>Research Question</a></h3>
 					<p>What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of:</p>
 					<ol>
 						<li>tweet type,</li>
@@ -175,7 +176,7 @@
 			</div>
 			<div class="col-7 col-7-medium col-12-small">
 				<article class="box style1" style="height: 100%;">
-					<h3><a href="#">Hypotheses</a></h3>
+					<h3><a>Hypotheses</a></h3>
 					<ol>
 						<li>The tweets with misinformation about Marcos's wealth and his supposed last will were more spread through replies and quote tweets.</li>
 						<li>The tweets were more persuasive rather than aggressive.</li>
@@ -185,13 +186,13 @@
 			</div>
 			<div class="col-5 col-5-medium col-12-small">
 				<article class="box style1" style="height: 100%;">
-					<h3><a href="#">Action Plan</a></h3>
+					<h3><a>Action Plan</a></h3>
 					<p>Analyze the tweet type, sentiment, and date of tweets with misinformation about Marcos's wealth and last will to identify the posting patterns of fake news spreaders.</p>
 				</article>
 			</div>
 			<div class="col-7 col-7-medium col-12-small">
 				<article class="box style1">
-					<h3><a href="#"> Null Hypotheses</a></h3>
+					<h3><a> Null Hypotheses</a></h3>
 					<ol>
 						<li>There is no significant difference between the number of original tweets, quote retweets, and replies.</li>
 						<li>There is no dominant sentiment among tweets regarding Marcos's wealth and last will.</li>
@@ -215,10 +216,10 @@
         <div class="row">
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2" style="height: 100%;">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/pic02.jpg" alt=""
               /></a>
-              <h3><a href="#">Data Cleaning</a></h3>
+              <h3><a>Data Cleaning</a></h3>
               <p>The timestamps and other relevant dates were converted to Asia/Manila time. New fields: <i>is_image, is_video, is_reply and is_url</i> were created from columns denoting the presence of each. These values were then congregated into <i>'Tweet Type'</i> which contains a comma delimited list of ['Image', 'Video', 'Reply', 'URL'].
                 <br><br>
                 Some columns were dropped, namely: "Link Redirect", "Reviewer", "Review", 
@@ -236,10 +237,10 @@
           </div>
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2" style="height: 100%;">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/pic03.jpg" alt=""
               /></a>
-              <h3><a href="#">Text Feature Generation</a></h3>
+              <h3><a >Text Feature Generation</a></h3>
               <p>The <i>mentions</i> and <i>hashtags</i> columns were created through regex extraction of those elements from the main tweet. The <i>Tweet Translated</i> field was also generated by translating the original tweet text through <b>deep_translator.GoogleTranslator</b> from Filipino to English.</p>
               <p>Further preprocessing removed links, punctuation and stop words from the translated tweet. Words were notably <b>not lemmatized</b> as the dimensionality of text features is within the acceptable range. Reducing words to their roots remove crucial information regarding the tense and context (especially for homonyms).</p>
               <p>The tweet text itself was also split from the alt-image text in the same field through regex extraction to account for the reading experience of the viewers which directly contribute to engagement.</p>
@@ -247,20 +248,20 @@
           </div>
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2" style="height: 100%;">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/pic03.jpg" alt=""
               /></a>
-              <h3><a href="#">NLP</a></h3>
+              <h3><a >NLP</a></h3>
               <p>The processed tweet content is fed through <b>CountVectorizer</b> and <b>TfidfVectorizer</b> which count each word associated with the tweet per row and perform TF-IDF for more interpretable results. Only the 1-gram is used as tweets do not require as much sequential context. However, 2-3 grams may be further explored.</p>
               <p>The TF-IDF processed table was taken as input for <b>Principal Component Analysis</b>. This proved to be inconclusive, however, due to the small sample size. This could, however, be used for developing a machine learning model using these features. It was determined that <b>83 components</b> can be derived from the 648 words that were part of the dataset to explain its variance.</p>
             </article>
           </div>
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2" style="height: 100%;">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/pic01.jpg" alt=""
               /></a>
-              <h3><a href="#">Machine Learning</a></h3>
+              <h3><a>Machine Learning</a></h3>
               <p>Ornare nulla proin odio consequat.</p>
             </article>
           </div>
@@ -280,10 +281,10 @@
         <div class="row">
           <div class="col-12 col-12-medium col-12-small">
             <article class="box style2">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/Frequency Timeseries.png" alt=""
               /></a>
-              <h3><a href="#">Time Series of Fake News Frequencies</a></h3>
+              <h3><a>Time Series of Fake News Frequencies</a></h3>
               <p>In 2016, the number of fake news tweets peaked at nine on June, a month after the 2016 elections. From 2021 onwards, the tweets started spiking again. The tweets peaked at October 2021, the period where Marcos filed for candidacy for the 2022 elections. It could be observed that there is an increase of frequencies of fake news tweets about Marcos’ Last Will during election seasons, those in which Bongbong Marcos is running. </p>
             </article>
           </div>
@@ -292,10 +293,10 @@
         <div class="row">
           <div class="col-12 col-12-medium col-12-small">
             <article class="box style2">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/ContentTypeTSandDist.png" alt=""
               /></a>
-              <h3><a href="#">Time Series of Fake News Content Type</a></h3>
+              <h3><a>Time Series of Fake News Content Type</a></h3>
               <p>During election seasons, there were more rational tweets compared to emotional tweets. It can also be observed that emotional tweets increased in number during the 2022 election season compared to the 2016 election season. </p>
             </article>
           </div>
@@ -304,20 +305,20 @@
         <div class="row">
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2" style="height: 100%;">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/HeatMap.png" alt=""
               /></a>
-              <h3><a href="#">Correlation Heat Map</a></h3>
+              <h3><a>Correlation Heat Map</a></h3>
               <p>From the heatmap, we can pick out the relevant pairs of variables with moderate to high correlations: (Following, Followers), (Followers, Quote Tweets), (Likes, Retweets), (Replies, Quote Tweets), (Retweets, Quote Tweets), (Quote Tweets, Following)
               </p>
             </article>
           </div>
           <div class="col-6 col-6-medium col-12-small">
             <article class="box style2">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/Pair plots" alt=""
               /></a>
-              <h3><a href="#">Pair Plots</a></h3>
+              <h3><a>Pair Plots</a></h3>
               <p>
                 We obtained the variables with correlations from the heat map and plotted them in these pair plots to better visualize their relationship. From the pair plots, we can see that the pairs of variables with a relatively high/strong positive correlation are Following and Followers, and Replies and Quote Tweets. The high positive correlation of Replies and Quote Tweets may indicate that the number of replies and quote tweets are indicators of the good engagement of the fake news tweet. 
               </p>
@@ -380,7 +381,7 @@
               <a href="rq1bii2.html" class="image featured">
                 <iframe src="rq1c2.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
                 </a>
-              <h3><a href="">How does word length affect engagement?</a></h3>
+              <h3><a>How does word length affect engagement?</a></h3>
               <h4>Research Question 1B </h4>
               <p><b>Finding:</b><i>WIP</i></p>
             </article>
@@ -445,7 +446,7 @@
               <a href="rq2b2.html" class="image featured">
                 <iframe src="rq2b2.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
               </a>
-              <h3><a href="">What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of general sentiment?</a></h3>
+              <h3><a>What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of general sentiment?</a></h3>
               <h4>Research Question 2B </h4>
               <p><b>Finding:</b><br>
                 Emotional tweets paint Marcos Jr in better light than negative attacks against detractors.<br>
@@ -458,10 +459,10 @@
           </div>
           <div class="col-12 col-12-medium col-12-small">
             <article class="box style2">
-              <a href="#" class="image featured"
+              <a class="image featured"
                 ><img src="images/Frequency Timeseries.png" alt=""
               /></a>
-              <h3><a href="">What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of year it was tweeted?</a></h3>
+              <h3><a>What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of year it was tweeted?</a></h3>
               <h4>Research Question 2C </h4>
               <p><b>Finding:</b><br>
                 The data was grouped into two groups: <b>election seasons (2016, 2019, 2021, 2022)</b> and <b>non-election seasons (2017, 2018, 2020)</b>, and the <b>Independent Samples T-test</b> was used to test whether the two groups are statistically different.<br><br>
@@ -540,6 +541,41 @@
           <p>Want to learn more? Take a look at our source codes.</p>
           <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Github Repo</a>
         </footer>
+      </div>
+    </article>
+    
+    <!-- Conclusion -->
+    <article id="conclusion" class="wrapper style3">
+      <div class="container">
+        <header>
+          <h2>Conclusions</h2>
+
+        </header>
+        <div class="row">
+          <div class="col-12 col-12-medium col-12-small">
+            <article class="box style2">
+              Our findings reveal that Marcos disinformation tweets started during the 2016
+              elections but intensified during the 2022 elections, and that there is a notable 
+              increase in emotional tweets during the 2022 elections with mainly positive sentiments. 
+              <br> <br>
+              Our research provides valuable insights into the tweeting cycle during election years, 
+              enabling a better understanding of patterns associated with tweet type and sentiment.
+              Organizations combatting disinformation may leverage the seasonal nature of election
+              disinformation to counterpropagate factual information before or early into elections.
+              <br> <br>
+              By identifying clustered themes, we can efficiently fact-check groups of tweets instead 
+              of evaluating each claim individually.  By recognizing clusters of themes, we can streamline
+              the fact-checking process by evaluating groups of tweets rather than individually assessing
+              each claim. This approach offers an opportunity to counter-propagate accurate information on 
+              a larger scale.
+              <br> <br>
+              The implications of our research highlight the urgent need for proactive measures to combat
+              the detrimental impact of disinformation on public perception and the democratic process. 
+              It underscores the importance of taking proactive steps to safeguard the integrity of 
+              information and ensure a well-informed electorate.
+            </article>
+          </div>
+        </div>
       </div>
     </article>
 
