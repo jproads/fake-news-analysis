@@ -467,14 +467,14 @@
                 The data was grouped into two groups: <b>election seasons (2016, 2019, 2021, 2022)</b> and <b>non-election seasons (2017, 2018, 2020)</b>, and the <b>Independent Samples T-test</b> was used to test whether the two groups are statistically different.<br><br>
 
                 The <b>Shapiro-Wilk test</b> shows that the election seasons group has a p-value of <b>0.9917</b> while the non-election seasons has a p-value of <b>0.8428</b>,
-                suggesting that both groups follow a normal distribution (since both p-values are greater than 0.05).
+                suggesting that both groups follow a <b>normal distribution</b> (since both p-values are greater than 0.05).
 
-                The <b>Independent Samples T-test</b> showed a T-statistic of 1.7318 with a p-value of 0.1438. Since the p-value is greater than 0.05,
-                we conclude that there are no significant difference or increase on the number of fake news tweets during election years.<br><br>
+                The <b>Independent Samples T-test</b> showed a T-statistic of 1.7318 with a p-value of <b>0.1438</b>. Since the p-value is greater than 0.05,
+                we conclude that there are <b>no significant difference or increase</b> on the number of fake news tweets during election years.<br><br>
 
                 However, if we only consider <b>presidential elections seasons</b> for the former group, i.e. <b>election seasons (2016, 2021, 2022)</b> and <b>non-election seasons (2017, 2018, 2019, 2020)</b>, we found different results.
 
-                The <b>Shapiro-Wilk test</b> still confirms that both groups follow a normal distribution, with a p-value of 0.8168 and 0.2407, respectively.
+                The <b>Shapiro-Wilk test</b> still confirms that both groups follow a <b>normal distribution</b>, with a p-value of 0.8168 and 0.2407, respectively.
                 
                 The <b>Independent Samples T-test</b> showed a T-statistic of <b>4.2040</b> and a p-value of <b>0.0084</b>, which is less than 0.05. 
                 This shows that the frequency of misinformation tweets during <b>national elections seasons</b> are statistically and significantly different and higher than regular years. <br><br>
@@ -486,10 +486,6 @@
             </article>
           </div>
         </div>
-        <footer>
-          <p>Want to learn more? Take a look at our source codes.</p>
-          <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Github Repo</a>
-        </footer>
       </div>
     </article>
 
@@ -499,9 +495,51 @@
         <header>
           <h2>Data Modelling</h2>
           <p>
-            lorem ipsum blabla
+            lorem ipsum dolor
           </p>
         </header>
+        <div class="col-12 col-12-medium col-12-small">
+          <article class="box style2">
+            <a class="image featured"><img src="images/ED_own_dataset.png" alt=""/></a>
+            <h3><a>Event Detection Model</a></h3>
+            <p>To perform event detection, <b>peak and change-point detection</b> was performed on our dataset. This allows us to analyze what events triggered the rise in frequency of fake news tweets.<br><br>
+              
+              <b>Peak detection</b> was performed using the <b>scipy.signal</b> module with the aid of the <b>find_peaks function</b>. For this function, all the parameters were set to default, except distance (set to 2) and height (set to 3).
+              The distance was set to 2 so that prominent peaks that may be near each other can be caught. The height was set to 3 since most month's frequencies lie on or below the 2 line.<br><br>
+
+              <b>Change-point detection</b> was performed using the <b>ruptures</b> module via the <b>Pelt algorithm</b>. The algorithm catches the point where the trends in the data change, with which it was plotted as a red vertical line on the graph.
+              The penalty parameter was set to 1 due to the dataset being fairly small.<br>
+
+              There are numerous <b>peaks</b> found on the dataset. The following events were most probably what drove the increase of tweets in these peaks:
+              <li><b>June 2016:</b> Bongbong Marcos released a statement regarding Leni Robredo allegedly cheating in the Vice Presidential elections</li>
+              <li><b>November 2016:</b>  Marcos Sr. was buried at Libingan ng mga Bayani</li>
+              <li><b>October 2021:</b> Bongbong Marcos filed his Certificate of Candidacy for Presidency</li>
+              <li><b>March 2022:</b> Height of campaign period where campaign rallies started ramping up in numbers</li>
+              <li><b>May 2022:</b> National elections were held</li><br>
+              
+              There were also various change points detected by the model. Investigating the trends, we could see that after the sudden increase of tweets in mid-2016, the trend rapidly died down. It then stayed in a constant trend in the late 2020 to early 2021.
+              The tweets then again spiked during the next presidential election season. From these trends, we could see how there is <b>no gradual build-up</b> towards the increase of tweets. The frequencies just <b>rapidly spikes during national presidential elections</b>.<br><br>
+
+              We also wanted to confirm the observation given a larger dataset, so we combined the datasets from other Marcos-related groups, and applied the same model to the data. The result can be seen below.
+              For both detection models, the same parameters was used as before, except the height parameter for peak detection is now set to 20 (since the dataset is now larger, and most periods lie on or below the 20 line). <br><br>
+
+              <a class="image featured"><img src="images/ED_entire_dataset.png" alt=""/></a>
+              The model found almost the same peaks, with some additional ones namely:
+              <li><b>February 2016:</b> Start of campaign period for 2016 elections</li>
+              <li><b>September 2022:</b> Martial Law anniversary (heightened due to a Marcos presidency)</li><br>
+
+              The change-point detection also detected the same trends--sudden spikes during presidential election seasons.<br><br>
+
+              Given the result obtained from the model, we can then clearly see the <b>seasonality</b> of the fake news tweets regarding Marcos Sr.'s last will. The event detection model confirmed how fake news tweets regarding
+              the late dictator's last will exists on a political landscape--<b>existing and rising only in a presidential election climate</b>. Given the observed seasonality of these tweets, we can then see when to ramp up <b>counter-propagation measures</b>.
+              This model helps us understand that misinformative content significantly rise during presidential election seasons, especially during events where Bongbong Marcos is involved, and allow us to realize when to increase efforts to battle these misinformative political endeavors.
+            </p>
+          </article>
+        </div>
+        <footer>
+          <p>Want to learn more? Take a look at our source codes.</p>
+          <a href="https://github.com/jproads/fake-news-analysis/tree/main/dataset" class="button large scrolly">Github Repo</a>
+        </footer>
       </div>
     </article>
 
