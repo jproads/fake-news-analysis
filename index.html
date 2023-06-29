@@ -101,9 +101,9 @@
           </div>
         </div>
         <footer>
-          <p>See for yourself the tweets that have been spreading online regarding Marcos Sr.'s Last Will and Testament</p>
+          <p>See for yourself the tweets that have been spreading online regarding Marcos Sr.'s Last Will and Testament!</p>
           <a href="https://drive.google.com/file/d/1vc51bxokkhp-UqhdtJmuEIwyP06i5kch/view?usp=sharing" class="button large scrolly"
-            >Let's take a look at our data</a
+            >Take a look at our data</a
           >
         </footer>
       </div>
@@ -261,8 +261,10 @@
               <a class="image featured"
                 ><img src="images/pic01.jpg" alt=""
               /></a>
-              <h3><a>Machine Learning</a></h3>
-              <p>Ornare nulla proin odio consequat.</p>
+              <h3><a href="">Machine Learning</a></h3>
+              <p>Peak finding was performed for time-series analysis using <b>scipy's</b> signal processing module. The leading themes of tweets were also analyzed by contrasting the results of applying <b>dimension reduction (t-SNE)</b> and <b>k-means clustering</b> with <b>latent dirichlet allocation (LDA)</b>. The latter produced more interpretable results for qualitative analysis.
+                Finally, to formulate more insights about the tweets' tone and use of language, the pre-trained <b>SentimentIntensityAnalyzer</b> from <b>nltk</b> was used to determine trends in tweet language.
+              </p>
             </article>
           </div>
         </div>
@@ -367,7 +369,8 @@
                 </a>
               <h3><a href="">Is the number of mentioned personalities/institutions correlated with engagement metrics?</a></h3>
               <h4>Research Question 1A </h4>
-              <p><b>Finding:</b> A linear trendline was plotted to show the trend in engagement metrics. From observation, there may be no correlation between the number of mentioned personalities/institutions and engagements. However, this may be due to a limitation in sample size or vocabulary.</p>
+              <p><b>Finding:</b> A linear trendline was plotted to show the trend in engagement metrics. From the <b>regression</b> line which ranges in slope from -0.2 to -1.13 for tweet engagement metrics, there may be no correlation between the number of mentioned personalities/institutions and engagements. However, this may be due to a limitation in sample size or vocabulary.
+              Further data collection may surface a trend in this area.</p>
               <a href="rq1add.html" class="image featured">
                 <iframe src="rq1add.html" height="600" width="1100" scrolling="no" frameborder="0"></iframe>
                 </a>
@@ -408,7 +411,13 @@
                 </a>
               <h3><a href="">Is the presence of media or links correlated with engagement metrics?</a></h3>
               <h4>Research Question 1C </h4>
-              <p><b>Finding:</b> Visually, there is no conclusive trend. There is a lack of high engagement sample tweets and there are only a few number of tweets with images/links.</p>
+              <p><b>Finding:</b> Visually, there is no conclusive trend. There is a lack of high engagement sample tweets and there are only a few number of tweets with images/links.
+              <br>
+              The p-value across engagement and URL content are as follows: <b>0.8799 (likes)</b>, <b>0.4268 (retweets)</b> and <b>0.1547 (replies)</b>. Thus, there is no statistical difference related to the inclusion of URLs and tweet engagement with the latter two metrics indicating that the columns may not be normally-distributed.
+              <br>
+              The p-value across engagement and URL content are as follows: <b>0.6534 (likes)</b> and <b>0.7175 (retweets)</b>. Thus, there is no statistical difference related to the inclusion of URLs and tweet likes and retweets. For replies, however, with a p-value of <b>0.9672</b>, it was shown that there is a statistically significant difference - there were more replies for tweets without images.
+
+              </p>
             </article>
             </div>
             <div class="col-12 col-12-medium col-12-small">
@@ -422,20 +431,10 @@
                 <h3><a href="">What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of tweet type?</a></h3>
                 <h4>Research Question 2A </h4>
                 <p><b>Finding:</b><br>
-                  
-                  [WITH STOPWORDS]<br>
-                  
-                  Median: 35.5 words, Mean: 33.95<br>
-                  Emotional: mean: 36.7, median: 39<br>
-                  Rational: mean: 32.3, median: 34<br>
-                  <br>
-                  [WITHOUT STOPWORDS]<br>
-                  
-                  Median: 18 words, Mean: 16.8<br>
-                  Emotional: mean: 17.30, median: 18<br>
-                  Rational: mean: 16.28, median: 17<br>
-                  <br>
-                  It appears that there is no significant difference. The categorical sample spread is similar to population spread. The Rational category has more spread in terms of word count -- it does not trend towards low or high count.</p>
+                  The categorical sample spread is similar to population spread. The Rational category has more spread in terms of word count -- it does not trend towards low or high count.
+                <br>
+                With a p-score of <b>0.3131</b>, it is shown that there is no significant difference between the length of words 
+                </p>
               </article>
           </div>
           <div class="col-12 col-12-medium col-12-small">
@@ -449,11 +448,18 @@
               <h3><a>What do the tweets with misinformation about Marcos's wealth and last will have in common in terms of general sentiment?</a></h3>
               <h4>Research Question 2B </h4>
               <p><b>Finding:</b><br>
-                Emotional tweets paint Marcos Jr in better light than negative attacks against detractors.<br>
-
-                Rational is more negative - defensive against non-supporters.<br>
-
-                Tweets were on average <b>more persuasive than aggressive</b>.<br>
+                The tweets can be categorized by tone:
+                <ul>
+                  <li>Emotional tweets paint Marcos Jr in a positive light rather than express negative attacks against detractors.</li>
+                  <li>The Rational category is more negative - defensive against non-supporters.</li>
+                </ul>
+                Tweets were on average more persuasive (Rational, Emotional+) than aggressive.
+                <br>
+                This is concluded from the results of two-way analysis of variance (ANOVA) on these features. The Shapiro-Wilk score (0.5323) of the two groups indicate that they are normally-distributed. Thus, the ANOVA will produce conclusive results.
+                <br>
+                The two-way ANOVA across tweet sentiment and content type present that there is a significant difference between the groups at the 98% confidence interval (p-score: 0.01273). 
+                <br>
+                These indicate that the Emotional category is in fact less negative while the Rational category is more neutral in terms of their tones.
               </p>
             </article>
           </div>
